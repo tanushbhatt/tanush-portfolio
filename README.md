@@ -2,7 +2,7 @@
 
 **Computer Engineering Student | Aspiring Data Scientist | Python & AI**
 
-**Live site:** _not deployed yet — add your Render URL here after you deploy (see [Deployment](#deployment-on-render))._
+**Live site:** <https://tanush-portfolio-4sbm.onrender.com/>
 
 ## About
 
