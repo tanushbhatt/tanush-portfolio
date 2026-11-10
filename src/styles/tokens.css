@@ -1,0 +1,95 @@
+/*
+  Design tokens. Every colour in the site comes from these variables, so the
+  Light and Dark themes are two deliberate palettes rather than one inverted.
+  The active theme is set on <html data-theme="light|dark"> (see useTheme.js).
+*/
+
+:root {
+  /* Typography */
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  /* Layout */
+  --container: 70rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --header-h: 4rem;
+  --section-y: clamp(4rem, 8vw, 6.5rem);
+
+  /* Shape & motion */
+  --radius-sm: 0.5rem;
+  --radius: 0.875rem;
+  --radius-lg: 1.25rem;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 0.25s;
+
+  /* ---------- Light theme (default) ---------- */
+  color-scheme: light;
+
+  --bg: #f6f8fa;
+  --bg-alt: #edf1f5;
+  --surface: #ffffff;
+  --surface-2: #f1f4f8;
+
+  --text: #0f1720;
+  --text-muted: #435064;
+  --text-subtle: #566377;
+
+  --border: #d5dce5;
+  --border-strong: #b4c0cd;
+
+  --accent: #0b6b65;
+  --accent-hover: #084e4a;
+  --accent-soft: rgba(11, 107, 101, 0.1);
+  --accent-border: rgba(11, 107, 101, 0.32);
+
+  --btn-bg: #0f766e;
+  --btn-bg-hover: #0b5f59;
+  --btn-fg: #ffffff;
+
+  --focus: #0b6b65;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 32, 0.06), 0 1px 1px rgba(15, 23, 32, 0.04);
+  --shadow-md: 0 14px 30px -14px rgba(15, 23, 32, 0.22), 0 2px 6px rgba(15, 23, 32, 0.06);
+
+  --glow: rgba(15, 118, 110, 0.16);
+  --grid-dot: rgba(15, 23, 32, 0.16);
+  --header-bg: rgba(246, 248, 250, 0.85);
+  --backdrop: rgba(10, 15, 20, 0.5);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0a0f14;
+  --bg-alt: #0d141b;
+  --surface: #111a23;
+  --surface-2: #17232f;
+
+  --text: #e9eff5;
+  --text-muted: #a8b6c5;
+  --text-subtle: #8c9bac;
+
+  --border: #1f2c39;
+  --border-strong: #324455;
+
+  --accent: #5eead4;
+  --accent-hover: #99f6e4;
+  --accent-soft: rgba(94, 234, 212, 0.1);
+  --accent-border: rgba(94, 234, 212, 0.32);
+
+  --btn-bg: #2dd4bf;
+  --btn-bg-hover: #5eead4;
+  --btn-fg: #03201c;
+
+  --focus: #5eead4;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 18px 36px -16px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.35);
+
+  --glow: rgba(45, 212, 191, 0.14);
+  --grid-dot: rgba(233, 239, 245, 0.1);
+  --header-bg: rgba(10, 15, 20, 0.8);
+  --backdrop: rgba(0, 0, 0, 0.62);
+}

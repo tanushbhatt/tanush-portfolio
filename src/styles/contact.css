@@ -1,0 +1,100 @@
+/* Contact section. */
+
+.contact {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+.contact__intro {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+}
+
+.contact__intro .section-heading {
+  margin-bottom: 0;
+}
+
+.contact__email {
+  font-size: clamp(1.1rem, 0.8rem + 1.6vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact__side {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+}
+
+.contact__channels {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact__channel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+}
+
+.contact__channel-text {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.contact__channel-value {
+  color: var(--text);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.contact__channel-arrow {
+  flex: none;
+  color: var(--text-subtle);
+  transition:
+    color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.contact__channel:hover .contact__channel-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+.contact__resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+}
+
+.contact__resume-name {
+  margin-top: 0.1rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.contact__resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+@media (min-width: 62rem) {
+  .contact {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    align-items: start;
+  }
+}

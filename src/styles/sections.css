@@ -1,0 +1,302 @@
+/* About, Skills, Experience, Education, Certifications, Hackathons. */
+
+/* ---------- About ---------- */
+
+.about {
+  display: grid;
+  gap: 2rem;
+}
+
+.about__copy {
+  display: grid;
+  gap: 1.1rem;
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  max-width: 42rem;
+}
+
+.about__focus {
+  margin-top: 0.5rem;
+}
+
+.facts {
+  display: grid;
+  align-self: start;
+  padding: 0.5rem 1.25rem;
+}
+
+.facts__row {
+  display: grid;
+  gap: 0.2rem;
+  padding-block: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.facts__row:last-child {
+  border-bottom: 0;
+}
+
+.facts dd {
+  color: var(--text);
+  font-weight: 500;
+}
+
+@media (min-width: 52rem) {
+  .about {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+}
+
+/* ---------- Skills ---------- */
+
+.skills {
+  display: grid;
+  gap: 1rem;
+}
+
+.skills__group {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: 1.25rem 1.35rem 1.4rem;
+}
+
+.skills__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.skills__title {
+  font-size: 1.0625rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.skills__group--primary {
+  border-color: var(--accent-border);
+  background: linear-gradient(180deg, var(--accent-soft), transparent 70%), var(--surface);
+}
+
+@media (min-width: 40rem) {
+  .skills {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skills__group--primary,
+  .skills__group--tools {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 62rem) {
+  .skills {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .skills__group--primary {
+    grid-column: span 2;
+  }
+
+  .skills__group--tools {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Experience ---------- */
+
+.timeline {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.timeline__item {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.timeline__date {
+  padding-top: 0.35rem;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.timeline__card {
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.4rem 1.5rem 1.6rem;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline__head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timeline__role {
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+
+.timeline__company {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.timeline__text {
+  color: var(--text-muted);
+  max-width: 46rem;
+}
+
+@media (min-width: 48rem) {
+  .timeline__item {
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* ---------- Education ---------- */
+
+.education {
+  display: grid;
+  gap: 1rem;
+}
+
+.education__card {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.education__degree {
+  font-size: 1.25rem;
+  font-weight: 650;
+}
+
+.education__school {
+  margin-top: 0.15rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.education__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin-top: 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.education__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.education__stat {
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.education__cgpa {
+  margin-top: 0.1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.education__note {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+@media (min-width: 40rem) {
+  .education__card {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+/* ---------- Certifications ---------- */
+
+.certs {
+  display: grid;
+  gap: 1rem;
+}
+
+.certs__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.35rem;
+}
+
+.certs__title {
+  font-size: 1.0625rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.certs__issuer {
+  margin-top: 0.15rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.certs__focus {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 40rem) {
+  .certs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Hackathons ---------- */
+
+.hackathons {
+  display: grid;
+  gap: 1rem;
+}
+
+.hackathons__item {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  padding: 1.35rem 1.5rem 1.5rem;
+}
+
+.hackathons__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hackathons__name {
+  font-size: 1.1875rem;
+  font-weight: 650;
+}
+
+.hackathons__text {
+  color: var(--text-muted);
+}
+
+@media (min-width: 48rem) {
+  .hackathons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

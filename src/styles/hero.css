@@ -1,0 +1,171 @@
+/* Hero: name, tagline, bio, actions and the "focus path" card. */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+  padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3.5rem, 8vw, 6rem);
+}
+
+/* Soft glow + faint dot grid (data-chart feel). Decorative only. */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero::before {
+  background: radial-gradient(52rem 26rem at 80% -8%, var(--glow), transparent 70%);
+}
+
+.hero::after {
+  background-image: radial-gradient(var(--grid-dot) 1px, transparent 1.4px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 85% at 78% 18%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 70% 85% at 78% 18%, #000 0%, transparent 72%);
+}
+
+.hero__inner {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+
+.hero__copy {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: start;
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 1.4rem + 5.4vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.hero__bio {
+  max-width: 38rem;
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.hero__actions,
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero__links {
+  margin-top: -0.25rem;
+}
+
+@media (min-width: 62em) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  }
+}
+
+/* ---------- Focus path card ---------- */
+
+.focus-card {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.focus-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.focus-card__title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.focus-path {
+  display: grid;
+}
+
+.focus-path li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  column-gap: 1rem;
+  padding-bottom: 1.35rem;
+}
+
+.focus-path li:last-child {
+  padding-bottom: 0;
+}
+
+/* Line connecting one step to the next. */
+.focus-path li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 2.25rem;
+  bottom: 0.1rem;
+  left: calc(1.125rem - 1px);
+  width: 2px;
+  background: linear-gradient(var(--accent-border), var(--border));
+}
+
+.focus-path__node {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--accent-border);
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  animation: node-pulse 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.55s);
+}
+
+.focus-path__text {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+}
+
+.focus-path__name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.focus-path__note {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+@keyframes node-pulse {
+  0%,
+  60%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  30% {
+    box-shadow: 0 0 0 6px var(--accent-soft);
+  }
+}
